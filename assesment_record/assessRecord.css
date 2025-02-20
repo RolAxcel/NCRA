@@ -1,0 +1,404 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #a31621;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    font-family: "Roboto", serif;
+}
+
+header {
+    display: flex;
+    border: 1px solid;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    color: #a31621;
+    background-color: snow;
+}
+
+header .logo img {
+    width: 130px;
+}
+
+header .headName:nth-of-type(2) {
+    font-weight: 900;
+}
+
+.client-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    color: snow;
+    margin-top: 2rem;
+}
+
+.client-details .details {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    font-size: 20px;
+}
+
+.client-details .date {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.client-details .applied {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.client-details .textBoxes {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: -140px;
+    gap: 7px;
+}
+
+.date-applied {
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+}
+ 
+.input1 {
+    margin-top: 8px;
+    border-radius: 10px;
+    outline: 2px solid #a2a6a8;
+    border: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #d6f1ff;
+    outline-offset: 3px;
+    padding: 5px 20px;
+    transition: all 0.2s ease;
+    width: 400px;
+  }
+  .input1:nth-of-type(1), .input:nth-of-type(1) {
+    margin-top: 0;
+  }
+  
+  .input1:hover {
+    background-color: #fff;
+  }
+  
+  .input1:focus {
+    outline-offset: -6px;
+    background-color: #d6f1ff;
+  }
+
+.input {
+    margin-top: 1rem;
+    border-radius: 8px;
+    outline: 2px solid #00a6fb;
+    border: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #d6f1ff;
+    outline-offset: 3px;
+    padding: 5px;
+    padding-left: 10px;
+    transition: all 0.2s ease;
+    width: 200px;
+  }
+  
+  .input:hover {
+    background-color: #fff;
+  }
+  
+  .input:focus {
+    outline-offset: -6px;
+    background-color: #d6f1ff;
+  }
+  
+  .taxes-details{
+    display: flex;
+    flex-direction: column;
+    color: snow;
+    width: 100%;
+    align-items: center;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
+
+  .taxes-details .texes {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .taxes-details h4:nth-of-type(2) {
+    position: relative;
+    left: 80px;
+  }
+
+  .taxes-details .inTaxes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .inTaxes .contractor-none {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+  }
+
+  .inTaxes .amount {
+    margin-right: 20px;
+  }
+
+  .contractor-none h4:nth-of-type(2) {
+    position: relative;
+    left: 0px;
+  }
+
+  .regulary-head {
+    width: 85%;
+  }
+
+  .regulary-fees {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 15px;
+    margin-left: 30px;
+  }
+
+  .fees {
+    display: flex;
+    color: snow;
+    font-size: 20px;
+  }
+
+  .regulary {
+    text-transform: uppercase;
+    color: snow;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 200;
+  }
+
+  .regulary-amount {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  section {
+    display: flex;
+    color: snow;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container1 {
+    border: 2px solid snow;
+    display: flex;
+    border-radius: 10px;
+    padding: 13px 17px;
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  .container1 .con {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-right: 2px solid snow;
+    padding-right: 115px;
+  }
+
+  .container1 .con:nth-of-type(4) {
+    border: none;
+    padding: 0;
+    position: relative;
+    right: 60px;
+  }
+
+  .container1 .con:nth-of-type(1) {
+    position: relative;
+    left: 60px;
+  }
+
+  .amnt {
+    border-top: 2px solid snow;
+    cursor: pointer;
+    margin-top: 5px;
+    padding-top: 10px;
+    width: 100%;
+  }
+
+  .computation {
+    border-bottom: 2px solid snow;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .container2 {
+    border: 2px solid snow;
+    width: 90%;
+    padding: 13px 17px;
+    margin-top: 15px;
+    border-radius: 10px;
+    line-height: 37px;
+  }
+
+  .payment::-webkit-scrollbar-thumb {
+    color: #d6f1ff;
+  }
+
+  .payment {
+    width: 400px;  
+    height: 50px;
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 10px;
+    resize: none;
+    line-height: 33px;
+    max-height: 200px; 
+    overflow: auto;
+  }
+
+  .total-tax {
+    display: flex;
+    gap: 18px;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .input-tax {
+    height: 25px;
+    position: relative;
+    left: 250px;
+    margin-top: 30px;
+    border: none;
+    background-color: none;
+  }
+
+  .input-tax button .fa-paper-plane {
+    inset: none;
+  }
+
+  /* From Uiverse.io by Galahhad */ 
+.search-label {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #3D3D3D;
+  padding: 9px;
+  cursor: text;
+}
+
+.search-label:hover {
+  border-color: gray;
+}
+
+.search-label:focus-within {
+  background: #464646;
+  border-color: gray;
+}
+
+.search-label input {
+  outline: none;
+  width: 100%;
+  border: none;
+  background: none;
+  color: rgb(162, 162, 162);
+}
+
+.search-label input:focus+.slash-icon,
+.search-label input:valid+.slash-icon {
+  display: none;
+}
+
+.search-label input:valid~.search-icon {
+  display: block;
+}
+
+.search-label input:valid {
+  width: calc(100% - 22px);
+  transform: translateX(20px);
+}
+
+.search-icon {
+  display: none;
+  width: 12px;
+  height: auto;
+}
+
+.fa-paper-plane {
+  right: 7px;
+  border: 1px solid #393838;
+  background: linear-gradient(-225deg, #343434, #6d6d6d);
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: inset 0 -2px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93), 0 1px 2px 1px rgba(28, 28, 29, 0.4);
+  cursor: pointer;
+  font-size: 12px;
+  width: 15px;
+}
+
+.fa-paper-plane:active {
+  box-shadow: inset 0 1px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93), 0 1px 2px 0 rgba(28, 28, 29, 0.4);
+  text-shadow: 0 1px 0 #7e7e7e;
+  color: transparent;
+}
+
+   .contract-amount {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 600px;
+   }
+
+   .waragud {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+   }
+
+   .calculation{
+    display: flex;
+    margin-right: 80px;
+    margin-bottom: 97px;
+    line-height: 40px;
+    justify-content: space-between;
+    width: 300px;
+    align-items: flex-start;
+   }
+
+   .tax-computation {
+    margin-right: 0px;
+   }
