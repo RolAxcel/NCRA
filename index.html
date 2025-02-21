@@ -20,11 +20,19 @@
         </div>
         <div class="inputs">
             <input type="text" placeholder="Username" name="username" id="username">
-            <input type="password" placeholder="Password" name="password" id="password">
+
+            <div class="password-container">
+                <input type="password" placeholder="Password" name="password" id="password" required>
+                <button type="button" class="toggle-password" id="togglePassword">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+
             <input type="submit" name="submit" id="submit">
         </div>
     </form>
-    <script></script>
+
+    <script src="/main/toggle.js"></script>
 </body>
 </html>
 
