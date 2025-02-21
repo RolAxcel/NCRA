@@ -11,6 +11,31 @@ body {
     background-position-x: center;
     font-family: 'roboto', serif;
 }
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#password {
+    width: 100%;
+    padding-right: 40px; /* Space for the toggle button */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #faf3f3;
+}
+
+.toggle-password:focus {
+    outline: none;
+}
 
 .container {
     z-index: 1000;
