@@ -1,175 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>noetYetDecided</title>
-    <link rel="stylesheet" href="assessRecord.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
-    <header>
-        <div class="logo"><img src="/images/logo3.png" alt=""></div>
-        <div class="logo"><img src="/images/logo1.png" alt="" style="mix-blend-mode: multiply;"></div>
-        <div class="headName">
-               <h4> Republic of the Philipines</h4>
-               <h4>CITY OF OROQUIETA</h4>
-               <h2>ASSESSMENT 0RECORD</h2>
-        </div>
-        <div class="logo"><img src="/images/logo4.png" alt=""></div>
-        <div class="logo"><img src="/images/logo2.png" alt=""></div>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>noetYetDecided</title>
+        <link rel="stylesheet" href="assessRecord.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+            rel='stylesheet'>
 
-    <div class="client-details">
-        <div class="details">
-            <h5>Trade Name:</h5>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <div class="logo"><img src="/images/logo3.png" alt></div>
+            <div class="logo"><img src="/images/logo1.png" alt
+                    style="mix-blend-mode: multiply;"></div>
+            <div class="headName">
+                <h4> Republic of the Philipines</h4>
+                <h4>CITY OF OROQUIETA</h4>
+                <h2>ASSESSMENT 0RECORD</h2>
+            </div>
+            <div class="logo"><img src="/images/logo4.png" alt></div>
+            <div class="logo"><img src="/images/logo2.png" alt></div>
+        </header>
+
+        <div class="client-details">
+            <div class="details">
+                <h5>Trade Name:</h5>
                 <h5>Address<:</h5>
                 <h5>Gen. Mngr.:</h5>
                 <h5>Address:</h5>
-        </div>
-        <div class="textBoxes">
-            <input class="input1" type="text">
-            <input class="input1" type="text">
-            <input class="input1" type="text">
-            <input class="input1" type="text">
-        </div>
-        <div class="date-applied">
-            <div class="date">
-                <h5>Date Applied:</h5>
-                <h5>Type:</h5>
             </div>
-            <div class="applied">
-                <input class="input" type="text">
-                <h5>Non-Resident</h5>
-                <h5>Contractor</h5>
+            <div class="textBoxes">
+                <input class="input1" type="text">
+                <input class="input1" type="text">
+                <input class="input1" type="text">
+                <input class="input1" type="text">
+            </div>
+            <div class="date-applied">
+                <div class="date">
+                    <h5>Date Applied:</h5>
+                    <h5>Type:</h5>
+                </div>
+                <div class="applied">
+                    <input class="input" type="text">
+                    <h5>Non-Resident</h5>
+                    <h5>Contractor</h5>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="taxes-details">
-        <div class="texes">
-            <h4>tax/fee</h4>
-            <h4 class="yeah">Kind of Business</h4>
-            <h4>Tax Amount</h4>
-        </div>
-        <div class="inTaxes">
-            <h4>TAX ON CONTRACTOR</h4>
-            <div class="contractor-none">
-                <h4>NON-RESIDENT</h4>
-                <h4>CONTRACTOR</h4>
+        <div class="taxes-details">
+            <div class="texes">
+                <h4>tax/fee</h4>
+                <h4 class="yeah">Kind of Business</h4>
+                <h4>Tax Amount</h4>
             </div>
-            <div class="amount">
-                <h4>₱ 0.00</h4>
-            </div>
-        </div>
-    </div>
-
-    <div class="regulary-head">
-        <div class="regulary-fees">
-            <div class="fees" style="color: snow;">
-                <h4>REGULARY FEES</h4>
-            </div>
-            <div class="regulary-amount">
-                <div class="regulary">
-                    <h4>REFULARY FEES</h4>
-                    <h4>mayor's permit fee</h4>
-                    <h4>solid waste mgnt user's fee</h4>
-                    <h4>police clearance fee</h4>
-                    <h4>medical certificate fee</h4>
-                    <h4>health certificate fee</h4>
-                    <h4>sanitary permit fee</h4>
-                    <h4>fire inspection fee</h4>
+            <div class="inTaxes">
+                <h4>TAX ON CONTRACTOR</h4>
+                <div class="contractor-none">
+                    <h4>NON-RESIDENT</h4>
+                    <h4>CONTRACTOR</h4>
                 </div>
                 <div class="amount">
-                    <input class="input" type="number" value="₱ 0.00">
+                    <h4>₱ 0.00</h4>
                 </div>
             </div>
         </div>
-    </div>
 
-    <section>
-        <div class="container1">
-            <div class="tax con">
-                <h4>Business Tax</h4>
-                <h4 class="amnt">₱ 0.00</h4>
-            </div>
-            <div class="regu-fees con">
-                <h4>Regulary Fees</h4>
-                <h4 class="amnt">₱ 0.00</h4>
-            </div>
-            <div class="changes con">
-                <h4>Other Changes</h4>
-            </div>
-            <div class="assessment con">
-                <h4>Assessment</h4>
-                <h4 class="amnt">₱ 0.00</h4>
-            </div>
-        </div>
-    </section>
-    
-    <section>
-        <div class="container2">
-            <div class="computation">
-                <h3>Computation</h3>
-            </div>
-            <div class="waragud">
-                <div class="contract-amount">
-                    <div class="cadc">
-                        <h4>Contract Amount Due to Contractor</h4>
-                        <textarea class="input payment" id="payment" type="text"></textarea>
-                        <div class="txable">
-                            <h4>Total Taxable Gross Receipt</h4>
-                        </div>
-                        <div class="total-tax">
-                            <h4>2,000,000 above (Pae.E, Sec.S2 of the Local Tax Code)</h4>
-                        </div>
-                        <h4>75% of 1% in exces of 2,000,000 is (Par.E, Sec.52 of the Local Tax Code)</h4>
-                        <h4>Total Tax Assessment Subject to Situs of Tax</h4>
-                        <h4>Multiplied by the tax rate for None-Resident Contractor(Sec.52 par. E, D-situs)</h4>
-                        <h4>Business Tax Due</h4>
-                        <h4>Add: Regular Fees</h4>
-                        <h4>TOTAL TAX AND REGULATION FEES DUE TO THE CITY</h4>
-                    </div>
-                    <div class="input-tax"> 
-                        <label class="search-label">
-                            <input type="number" name="number" class="input" required="" placeholder="Type here...">
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </label>
-                    </div>
+        <div class="regulary-head">
+            <div class="regulary-fees">
+                <div class="fees" style="color: snow;">
+                    <h4>REGULARY FEES</h4>
                 </div>
-                <div class="calculation">
-                    <div class="tax-computation">
-                        <h4>0.00</h4>
-                        <h4>0.00</h4>
-                        <h4>₱ -0.00</h4>
+                <div class="regulary-amount">
+                    <div class="regulary">
+                        <h4>REFULARY FEES</h4>
+                        <h4>mayor's permit fee</h4>
+                        <h4>solid waste mgnt user's fee</h4>
+                        <h4>police clearance fee</h4>
+                        <h4>medical certificate fee</h4>
+                        <h4>health certificate fee</h4>
+                        <h4>sanitary permit fee</h4>
+                        <h4>fire inspection fee</h4>
                     </div>
-                    <div class="tax-formula">
-                        <h4>₱ 0.00</h4>
-                        <h4>₱ -0.00</h4>
-                        <h4>₱ 0.00</h4>
-                        <h4>x 70%</h4>
-                        <h4>₱ 0.00</h4>
-                        <h4>0.00</h4>
-                        <h4 class="ecuals">0.00</h4>
+                    <div class="amount">
+                        <input class="input" type="number" value="₱ 0.00">
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <script>
-        const textarea = document.getElementById("payment");
 
-        textarea.addEventListener("input", function() {
-            const maxCharsPerLine = 50;
-            const lines = Math.ceil(this.value.length / maxCharsPerLine); // Calculate required lines
-            
-            this.style.height = (40 * lines) + "px"; // Expand by one line at a time
-        });
-    </script>
-</body>
+        <section>
+            <div class="container1">
+                <div class="tax con">
+                    <h4>Business Tax</h4>
+                    <h4 class="amnt">₱ 0.00</h4>
+                </div>
+                <div class="regu-fees con">
+                    <h4>Regulary Fees</h4>
+                    <h4 class="amnt">₱ 0.00</h4>
+                </div>
+                <div class="changes con">
+                    <h4>Other Changes</h4>
+                </div>
+                <div class="assessment con">
+                    <h4>Assessment</h4>
+                    <h4 class="amnt">₱ 0.00</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPUTATION SECTION -->
+        <section>
+            <div class="container2">
+                <div class="computation">
+                    <h3>Computation</h3>
+                </div>
+                <div class="waragud">
+                    <div class="contract-amount">
+                        <div class="cadc">
+                            <h4>Contract Amount Due to Contractor</h4>
+                            <textarea class="input payment"
+                                type="text"></textarea>
+                            <div class="txable">
+                                <h4>Total Taxable Gross Receipt</h4>
+                            </div>
+                            <div class="total-tax">
+                                <h4>2,000,000 above (Pae.E, Sec.S2 of the Local
+                                    Tax Code)</h4>
+                            </div>
+                            <h4>75% of 1% in exces of 2,000,000 is (Par.E,
+                                Sec.52 of the Local Tax Code)</h4>
+                            <h4>Total Tax Assessment Subject to Situs of
+                                Tax</h4>
+                            <h4>Multiplied by the tax rate for None-Resident
+                                Contractor(Sec.52 par. E, D-situs)</h4>
+                            <h4>Business Tax Due</h4>
+                            <h4>Add: Regular Fees</h4>
+                            <h4>TOTAL TAX AND REGULATION FEES DUE TO THE
+                                CITY</h4>
+                        </div>
+                        <div class="input-tax">
+                            <label for="number" class="search-label">
+                                <input id="payment" type="number" name="number"
+                                    class="input"
+                                    required placeholder="Type here...">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="calculation">
+                        <div class="tax-computation">
+                            <h4 id="tax-com1" class="tax-com1">0.00</h4>
+                            <h4 id="tax-com2" class="tax-com2">0.00</h4>
+                            <h4 id="tax-com3" class="tax-com3">₱ -0.00</h4>
+                        </div>
+                        <div class="tax-formula">
+                            <h4 id="tax-for1" class="tax-for1">₱ 0.00</h4>
+                            <h4 id="tax-for2" class="tax-for2">₱ -0.00</h4>
+                            <h4 id="tax-for3" class="tax-for3">₱ 0.00</h4>
+                            <h4 id="tax-for4" class="tax-for4">x 70%</h4>
+                            <h4 id="tax-for5" class="tax-for5">₱ 0.00</h4>
+                            <h4 id="tax-for6" class="tax-for6">0.00</h4>
+                            <h4 id="equals" class="equals">0.00</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            const textarea = document.getElementById("payment");
+
+            textarea.addEventListener("input", function() {
+                const maxCharsPerLine = 50;
+                const lines = Math.ceil(this.value.length / maxCharsPerLine); 
+                
+                this.style.height = (40 * lines) + "px"; 
+            });
+        </script>
+        <script src="../assesment_record/assessRecord.js"></script>
+    </body>
 </html>
