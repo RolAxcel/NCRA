@@ -17,7 +17,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 // Allowed admin emails (only these users can log in)
-const allowedAdmins = ["testuser@gmail.com"];// Use full email addresses
+const allowedAdmins = ["citytreasurer2025@gmail.com"];// Use full email addresses
 
 document.getElementById("submit").addEventListener("click", (event) => {
     event.preventDefault();
@@ -34,7 +34,8 @@ document.getElementById("submit").addEventListener("click", (event) => {
 
             if (allowedAdmins.includes(user.email)) {
                 alert("Login successful! Welcome Admin.");
-                window.location.href = "/assesment_record/assessRecord.html"; // Redirect to admin panel
+                window.location.href =
+                    "/option/option.html"; // Redirect to admin panel
             } else {
                 alert("Access Denied: You are not an admin.");
                 auth.signOut(); // Sign out the user if they are not an admin
