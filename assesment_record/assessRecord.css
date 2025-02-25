@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #a31621;
+    background-color: black;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -19,8 +19,6 @@ header {
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
-    text-align: center;
-    color: #a31621;
     background-color: snow;
 }
 
@@ -47,6 +45,7 @@ header .headName:nth-of-type(2) {
     flex-direction: column;
     gap: 21px;
     font-size: 20px;
+    width: 200px;
 }
 
 .client-details .date {
@@ -94,6 +93,10 @@ header .headName:nth-of-type(2) {
   }
   .input1:nth-of-type(1), .input:nth-of-type(1) {
     margin-top: 0;
+  }
+
+  .date {
+    width: 10px;
   }
   
   .input1:hover {
@@ -203,6 +206,7 @@ header .headName:nth-of-type(2) {
     flex-direction: column;
     gap: 8px;
     font-weight: 200;
+    font-size: 13px;
   }
 
   .regulary-amount {
@@ -383,6 +387,11 @@ header .headName:nth-of-type(2) {
     width: 600px;
    }
 
+   .cadc {
+    width: 670px;
+    font-size: 13px;
+   }
+
    .waragud {
     display: flex;
     align-items: flex-end;
@@ -392,8 +401,8 @@ header .headName:nth-of-type(2) {
    .calculation{
     display: flex;
     margin-right: 80px;
-    margin-bottom: 97px;
-    line-height: 40px;
+    margin-bottom: 10px;
+    line-height: 35px;
     justify-content: space-between;
     width: 300px;
     align-items: flex-start;
@@ -401,4 +410,83 @@ header .headName:nth-of-type(2) {
 
    .tax-computation {
     margin-right: 0px;
+    font-size: 13px;
    }
+
+   .tax-formula {
+    margin-top: 37px;
+    font-size: 13px;
+   }
+
+   .underLine {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid white;
+   }
+
+   @media print {
+    .print-btn {
+        display: none;
+    }
+
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Adjust text colors for better readability */
+    h4, h5, h3 {
+        color: black !important;
+    }
+
+    /* Ensure input fields and textareas show their values */
+    .input1, textarea, .input {
+        border: none;
+        background: transparent;
+        outline-offset: none;
+        outline: none;
+        border: none;
+        padding: 0;
+    }
+
+    .textBoxes {
+      margin-top: 15px;
+      width: px;
+    }
+
+    /* Remove unnecessary shadows or colors */
+    .container1, .container2 {
+        box-shadow: none;
+        background: white;
+    }
+
+    .client-details .details {
+      font-size: 16.6px;
+      gap: 5px;
+    }
+
+    .client-details .textBoxes {
+      margin-left: 150px;
+      gap:0px;
+      margin-top: -2px;
+    }
+
+    .client-details {
+      align-items: flex-start;
+    }
+
+    .date-applied {
+      width: 500px;
+      justify-content: space-between;
+    }
+
+    .container1 {
+      padding: 0;
+    }
+
+    .container2 {
+      padding: 0;
+      margin: 0;
+    }
+}
