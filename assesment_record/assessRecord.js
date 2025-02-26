@@ -1,6 +1,65 @@
 document.addEventListener("DOMContentLoaded", function () {
     const inputField = document.getElementById('payment');
     inputField.addEventListener('input', calculateTax); 
+
+    const saveButton = document.getElementById('saveButton');
+    const modal = document.getElementById('myModal');
+    const closeModal = document.getElementsByClassName('close')[0];
+    const savedDataDiv = document.getElementById('savedData');
+
+    saveButton.addEventListener('click', function () {
+        // Capture the values from the h4 elements
+        const taxCom1 = document.getElementById('tax-com1').textContent;
+        const taxCom2 = document.getElementById('tax-com2').textContent;
+        const taxCom3 = document.getElementById('tax-com3').textContent;
+
+        const taxFor1 = document.getElementById('tax-for1').textContent;
+        const taxFor2 = document.getElementById('tax-for2').textContent;
+        const taxFor3 = document.getElementById('tax-for3').textContent;
+        const taxFor4 = document.getElementById('tax-for4').textContent;
+        const taxFor5 = document.getElementById('tax-for5').textContent;
+        const taxFor6 = document.getElementById('tax-for6').textContent;
+        const equals = document.getElementById('equals').textContent;
+        const amnt = document.getElementById('amnt').textContent;
+        const businessTax = document.getElementById('businessTax').textContent;
+        const regulatoryFees = document.getElementById('regulatoryFees').textContent;
+        const assessment = document.getElementById('assessment').textContent;
+        const uwu = document.getElementById('uwu').textContent;
+
+        // Display the values inside the modal
+        savedDataDiv.innerHTML = `
+            <p>Tax Com1: ${taxCom1}</p>
+            <p>Tax Com2: ${taxCom2}</p>
+            <p>Tax Com3: ${taxCom3}</p>
+            <p>Tax For1: ${taxFor1}</p>
+            <p>Tax For2: ${taxFor2}</p>
+            <p>Tax For3: ${taxFor3}</p>
+            <p>Tax For4: ${taxFor4}</p>
+            <p>Tax For5: ${taxFor5}</p>
+            <p>Tax For6: ${taxFor6}</p>
+            <p>Equals: ${equals}</p>
+            <p>Amount: ${amnt}</p>
+            <p>Business Tax: ${businessTax}</p>
+            <p>Regulatory Fees: ${regulatoryFees}</p>
+            <p>Assessment: ${assessment}</p>
+            <p>Uwu: ${uwu}</p>
+        `;
+
+        // Show the modal
+        modal.style.display = "block";
+    });
+
+    // Close the modal when the close button is clicked
+    closeModal.addEventListener('click', function () {
+        modal.style.display = "none";
+    });
+
+    // Close the modal when clicking outside of it
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
 });
 
 function calculateTax() {
