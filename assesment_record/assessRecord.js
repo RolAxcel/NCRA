@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     inputField.addEventListener('input', calculateTax); 
 
     const saveButton = document.getElementById('saveButton');
+    const viewDataButton = document.getElementById('viewDataButton');
     const modal = document.getElementById('myModal');
     const closeModal = document.getElementsByClassName('close')[0];
     const savedDataDiv = document.getElementById('savedData');
@@ -26,24 +27,86 @@ document.addEventListener("DOMContentLoaded", function () {
         const assessment = document.getElementById('assessment').textContent;
         const uwu = document.getElementById('uwu').textContent;
 
-        // Display the values inside the modal
-        savedDataDiv.innerHTML = `
-            <p>Tax Com1: ${taxCom1}</p>
-            <p>Tax Com2: ${taxCom2}</p>
-            <p>Tax Com3: ${taxCom3}</p>
-            <p>Tax For1: ${taxFor1}</p>
-            <p>Tax For2: ${taxFor2}</p>
-            <p>Tax For3: ${taxFor3}</p>
-            <p>Tax For4: ${taxFor4}</p>
-            <p>Tax For5: ${taxFor5}</p>
-            <p>Tax For6: ${taxFor6}</p>
-            <p>Equals: ${equals}</p>
-            <p>Amount: ${amnt}</p>
-            <p>Business Tax: ${businessTax}</p>
-            <p>Regulatory Fees: ${regulatoryFees}</p>
-            <p>Assessment: ${assessment}</p>
-            <p>Uwu: ${uwu}</p>
-        `;
+        // Capture the values from the input fields
+        const input1Values = document.querySelectorAll('.input1');
+        const dateValue = document.querySelector('.input[type="date"]').value;
+
+        // Check if required fields are filled
+        const areInputsFilled = Array.from(input1Values).every(input => input.value.trim() !== '');
+        const isDateFilled = dateValue.trim() !== '';
+
+        if (!areInputsFilled || !isDateFilled) {
+            alert("Please fill in all the required fields.");
+            return;
+        }
+
+        // Prepare the input values to be displayed
+        let input1Text = '';
+        input1Values.forEach((input, index) => {
+            input1Text += `<p>Input ${index + 1}: ${input.value}</p>`;
+        });
+
+        // Create an object to store the data
+        const data = {
+            taxCom1,
+            taxCom2,
+            taxCom3,
+            taxFor1,
+            taxFor2,
+            taxFor3,
+            taxFor4,
+            taxFor5,
+            taxFor6,
+            equals,
+            amnt,
+            businessTax,
+            regulatoryFees,
+            assessment,
+            uwu,
+            inputs: Array.from(input1Values).map(input => input.value),
+            dateValue
+        };
+
+        // Retrieve the existing data from localStorage
+        let savedData = JSON.parse(localStorage.getItem('savedData')) || [];
+
+        // Add the new data to the array
+        savedData.push(data);
+
+        // Save the updated data array back to localStorage
+        localStorage.setItem('savedData', JSON.stringify(savedData));
+
+        // Show a confirmation message
+        alert("Data saved successfully!");
+    });
+
+    viewDataButton.addEventListener('click', function () {
+        // Retrieve the existing data from localStorage
+        let savedData = JSON.parse(localStorage.getItem('savedData')) || [];
+
+        // Display the values inside the modal as separate divs
+        savedDataDiv.innerHTML = savedData.map((entry, index) => `
+            <div class="entry shadow">
+                <h4>${entry.inputs[0]}</h4>
+                <p>Tax Com1: ${entry.taxCom1}</p>
+                <p>Tax Com2: ${entry.taxCom2}</p>
+                <p>Tax Com3: ${entry.taxCom3}</p>
+                <p>Tax For1: ${entry.taxFor1}</p>
+                <p>Tax For2: ${entry.taxFor2}</p>
+                <p>Tax For3: ${entry.taxFor3}</p>
+                <p>Tax For4: ${entry.taxFor4}</p>
+                <p>Tax For5: ${entry.taxFor5}</p>
+                <p>Tax For6: ${entry.taxFor6}</p>
+                <p>Equals: ${entry.equals}</p>
+                <p>Amount: ${entry.amnt}</p>
+                <p>Business Tax: ${entry.businessTax}</p>
+                <p>Regulatory Fees: ${entry.regulatoryFees}</p>
+                <p>Assessment: ${entry.assessment}</p>
+                <p>Uwu: ${entry.uwu}</p>
+                ${entry.inputs.map((input, i) => `<p>Input ${i + 1}: ${input}</p>`).join('')}
+                <p>Date Applied: ${entry.dateValue}</p>
+            </div>
+        `).join('');
 
         // Show the modal
         modal.style.display = "block";
