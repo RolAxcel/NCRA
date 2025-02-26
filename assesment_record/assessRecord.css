@@ -574,6 +574,70 @@ textarea {
   cursor: pointer;
 }
 
+/* Modal Overlay */
+.custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Box */
+.custom-modal-content {
+  background: snow;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  color: black;
+  font-size: 15px;
+}
+
+/* Modal Buttons */
+.custom-modal-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-confirm {
+  background: red;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn-cancel {
+  background: rgb(53, 50, 50);
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+ text-align: center;
+}
+
+/* Button Hover Effects */
+.btn-confirm:hover {
+  background: darkred;
+}
+
+.btn-cancel:hover {
+  background: darkgray;
+}
+
 
    @media print {
 
