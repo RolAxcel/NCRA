@@ -1,15 +1,3 @@
-function logout() {
-    let confirmLogout = confirm("Do you want to logout?");
-    
-    if (confirmLogout) {
-        // User clicked "Yes" - Logout and redirect to login page
-        window.location.href = "/index.html"; // Change this to your actual logout page
-    } else {
-        // User clicked "No" - Redirect to another page
-        window.location.href = "/assesment_record/assessRecord.html"; // Change this to the page you want
-    }
-}
-
 function toggleDrawer() {
     const drawer = document.getElementById("drawer");
     drawer.classList.toggle("open"); // Use class for toggling visibility
@@ -27,3 +15,45 @@ document.addEventListener("click", function (event) {
         drawer.classList.remove("open");
     }
 });
+
+// Close sidebar when clicking an item inside
+document.querySelectorAll("#drawer .items").forEach(function (item) {
+    item.addEventListener("click", function () {
+        let drawer = document.getElementById("drawer");
+        drawer.classList.remove("open");
+    });
+});
+
+// logout section
+
+// Show the logout modal
+function showCustomLogoutModal() {
+    document.getElementById("customLogoutModal").style.display = "flex";
+}
+
+// Handle logout confirmation
+function confirmCustomLogout(isConfirmed) {
+    let modal = document.getElementById("customLogoutModal");
+    let drawer = document.getElementById("drawer");
+
+    if (isConfirmed) {
+        // User clicked "Yes" - Logout and redirect
+        window.location.href = "/index.html"; // Change this to your actual logout page
+    } else {
+        // User clicked "No" - Close modal and close drawer
+        modal.style.display = "none";
+        if (drawer.classList.contains("open")) {
+            drawer.classList.remove("open");
+        }
+    }
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    let modal = document.getElementById("customLogoutModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+
+
