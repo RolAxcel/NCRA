@@ -22,7 +22,22 @@
             crossorigin="anonymous"></script>
     </head>
     <body>
+        <!-- Drawer Sidebar -->
+    <div id="drawer" class="sidebar">
+        <ul>
+            <li><a href="#" onclick="window.print()">Print</a></li>
+            <button id="saveButton">Save</button>
+            <li><a href="#">2 MILLION BELOW</a></li>
+        </ul>
+        <!-- Logout Button Positioned to the Right -->
+        <div class="logout-btn">
+            <button onclick="logout()" class="btn-logout">Logout</button>
+        </div>
+    </div>
         <header>
+            <div class="drawer-icon" onclick="toggleDrawer()">
+                <i class="fas fa-bars"></i> <!-- Drawer Icon -->
+            </div>
             <div class="logo"><img src="/images/logo3.png" alt></div>
             <div class="logo"><img src="/images/logo1.png" alt
                     style="mix-blend-mode: multiply;"></div>
@@ -54,7 +69,7 @@
                     <h5>Type:</h5>
                 </div>
                 <div class="applied">
-                    <input class="input date" type="date">
+                    <input class="input" type="date">
                     <h5>Non-Resident</h5>
                     <h5>Contractor</h5>
                 </div>
@@ -82,7 +97,7 @@
         <div class="regulary-head">
             <div class="regulary-fees">
                 <div class="fees" style="color: snow;">
-                    <h4>REGULARY FEES</h4>
+                    <h4>REGULATORY FEES</h4>
                 </div>
                 <div class="regulary-amount">
                     <div class="regulary">
@@ -113,7 +128,6 @@
                 </div>
                 <div class="changes con">
                     <h4>Other Changes</h4>
-                    <h4 class="amnt" style="font-size: 27px;">&equals;</h4>
                 </div>
                 <div class="assessment con">
                     <h4>Assessment</h4>
@@ -121,6 +135,14 @@
                 </div>
             </div>
         </section>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Saved Data</h3>
+                <div id="savedData"></div> <!-- This div will hold the saved data -->
+            </div>
+        </div>
 
         <!-- COMPUTATION SECTION -->
         <section>
@@ -132,8 +154,7 @@
                     <div class="contract-amount">
                         <div class="cadc">
                             <h4>Contract Amount Due to Contractor</h4>
-                            <textarea class="input payment detalye"
-                                type="text"></textarea>
+                            <textarea required="" cols="45" rows="3" id="textarea" class="pay" name="textarea"></textarea>
                             <div class="txable">
                                 <h4>Total Taxable Gross Receipt</h4>
                             </div>
@@ -144,17 +165,15 @@
                             <h4>Total Tax Assessment Subject to Situs of Tax</h4>
                             <h4>Multiplied by the tax rate for None-Resident Contractor(Sec.52 par. E, D-situs)</h4>
                             <h4>Business Tax Due</h4>
-                            <h4>Add: Regular Fees</h4>
-                            <h4>TOTAL TAX AND REGULATION FEES DUE TO THE CITY</h4>
+                            <h4>Add: Regulatory Fees</h4>
+                            <h4>TOTAL TAX AND REGULATORY FEES DUE TO THE CITY</h4>
                         </div>
                         <div class="input-tax">
                             <label for="number" class="search-label">
                                 <input id="payment" type="number" name="number"
-                                    class="input"
                                     required placeholder="Type here...">
                             </label>
                         </div>
-                        <button onclick="window.print()" class="print-btn">Print</button>
                     </div>
                     <div class="calculation">
                         <div class="tax-computation">
@@ -175,6 +194,25 @@
                 </div>
             </div>
         </section>
+
+        <section>
+            <div class="printedName">
+                <div class="correctedBy">
+                    <h3>CERTIFIED BY:</h3>
+                </div>
+                <div class="overPrintedName">
+                    <div class="alignment">
+                        <h3>CELY B. SANGCALAN</h3>
+                        <h4>local treasurer operation officer iv</h4>
+                        <h4>(chief, licenses and fees division)</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
         <script src="../assesment_record/assessRecord.js"></script>
+        <script src="logout.js"></script>
+        <script>
+
+        </script>
     </body>
 </html>
