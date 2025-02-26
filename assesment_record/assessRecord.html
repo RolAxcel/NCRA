@@ -30,9 +30,19 @@
             <li><button class="items" id="viewDataButton">View Data</button></li>
             <li class="items"><a href="#">2 MILLION BELOW</a></li>
         </ul>
-        <!-- Logout Button Positioned to the Right -->
-        <div class="logout-btn">
-            <button onclick="logout()" class="btn-logout">Logout</button>
+       <!-- Logout Button Positioned to the Right -->
+         <div class="logout-btn">
+            <button onclick="showCustomLogoutModal()" class="btn-logout">Logout</button>
+            <!-- Custom Logout Modal -->
+            <div id="customLogoutModal" class="custom-modal">
+                <div class="custom-modal-content">
+                    <h2>Do you really want to logout?</h2>
+                    <div class="custom-modal-actions">
+                        <button onclick="confirmCustomLogout(true)" class="btn-confirm">Yes</button>
+                        <button onclick="confirmCustomLogout(false)" class="btn-cancel">No</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
         <header>
