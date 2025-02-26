@@ -15,11 +15,11 @@ body {
 
 header {
     display: flex;
-    border: 1px solid;
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
     background-color: snow;
+    text-align: center;
 }
 
 header .logo img {
@@ -111,7 +111,7 @@ header .headName:nth-of-type(2) {
 .input {
     margin-top: 1rem;
     border-radius: 8px;
-    outline: 2px solid #00a6fb;
+    outline: 2px solid #a2a6a8;
     border: 0;
     font-family: "Montserrat", sans-serif;
     background-color: #d6f1ff;
@@ -145,14 +145,14 @@ header .headName:nth-of-type(2) {
     display: flex;
     margin-top: 30px;
     margin-bottom: 30px;
-    width: 80%;
+    width: 78%;
     justify-content: space-between;
     align-items: center;
   }
 
   .taxes-details h4:nth-of-type(2) {
     position: relative;
-    left: 80px;
+    left: 60px;
   }
 
   .taxes-details .inTaxes {
@@ -281,14 +281,14 @@ header .headName:nth-of-type(2) {
 
   .payment {
     width: 400px;  
-    height: 50px;
+    height: 35px;
     font-size: 16px;
-    padding: 10px;
     padding-left: 10px;
     resize: none;
     line-height: 33px;
     max-height: 200px; 
-    overflow: auto;
+    outline: none;
+    border-radius: 4px;
   }
 
   .total-tax {
@@ -325,10 +325,6 @@ header .headName:nth-of-type(2) {
   cursor: text;
 }
 
-.search-label:hover {
-  border-color: gray;
-}
-
 .search-label:focus-within {
   background: #464646;
   border-color: gray;
@@ -339,45 +335,12 @@ header .headName:nth-of-type(2) {
   width: 100%;
   border: none;
   background: none;
-  color: rgb(162, 162, 162);
+  color: snow
 }
 
-.search-label input:focus+.slash-icon,
-.search-label input:valid+.slash-icon {
-  display: none;
-}
-
-.search-label input:valid~.search-icon {
-  display: block;
-}
-
-.search-label input:valid {
-  width: calc(100% - 22px);
-  transform: translateX(20px);
-}
-
-.search-icon {
-  display: none;
-  width: 12px;
-  height: auto;
-}
-
-.fa-paper-plane {
-  right: 7px;
-  border: 1px solid #393838;
-  background: linear-gradient(-225deg, #343434, #6d6d6d);
-  border-radius: 3px;
-  text-align: center;
-  box-shadow: inset 0 -2px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93), 0 1px 2px 1px rgba(28, 28, 29, 0.4);
-  cursor: pointer;
-  font-size: 12px;
-  width: 15px;
-}
-
-.fa-paper-plane:active {
-  box-shadow: inset 0 1px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93), 0 1px 2px 0 rgba(28, 28, 29, 0.4);
-  text-shadow: 0 1px 0 #7e7e7e;
-  color: transparent;
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
    .contract-amount {
@@ -388,7 +351,7 @@ header .headName:nth-of-type(2) {
    }
 
    .cadc {
-    width: 670px;
+    width: 900px;
     font-size: 13px;
    }
 
@@ -401,7 +364,7 @@ header .headName:nth-of-type(2) {
    .calculation{
     display: flex;
     margin-right: 80px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     line-height: 35px;
     justify-content: space-between;
     width: 300px;
@@ -424,7 +387,158 @@ header .headName:nth-of-type(2) {
     border-bottom: 2px solid white;
    }
 
+   textarea {
+    border-radius: 6px;
+    font-weight: 700;
+    outline-offset: 2px solid white;
+    outline: none;
+    padding: 10px;
+    padding-left: 10px;
+    outline: 3px solid #a2a6a8;
+    line-height: 18px;
+   }
+
+   .printedName {
+    display: none;
+   }
+
+   /* Drawer (Sidebar) */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of viewport */
+  justify-content: space-between; /* Pushes the logout button to the bottom */
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden initially */
+  width: 250px;
+  height: 100vh;
+  background: white;
+  color: white;
+  padding-top: 60px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* Ensure list items are aligned */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  
+}
+
+.sidebar ul li {
+  padding: 15px;
+}
+
+.sidebar ul li a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background 0.3s ease-in-out;
+}
+
+.sidebar ul li a:hover {
+  background: #f0f0f0; /* Light gray background on hover */
+}
+
+.logout-btn {
+  margin-top: auto; /* Pushes it to the bottom */
+  padding: 10px;
+  text-align: center;
+}
+
+.btn-logout {
+  background-color: rgb(68, 62, 62);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-logout:hover {
+  background-color: gray;
+}
+
+
+
+/* Drawer Icon (Button) */
+.drawer-icon {
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgb(3, 110, 197);
+  z-index: 1100; /* Ensure it's above everything */
+  position: fixed;
+}
+
+#drawer {
+  position: fixed;
+  left: -250px; /* Hidden by default */
+  transition: left 0.3s ease-in-out;
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+}
+
+#drawer.open {
+  left: 0px; /* Show when open */
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
    @media print {
+
+    @page {
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .print-btn {
         display: none;
     }
@@ -457,8 +571,11 @@ header .headName:nth-of-type(2) {
 
     /* Remove unnecessary shadows or colors */
     .container1, .container2 {
-        box-shadow: none;
         background: white;
+        font-weight: 900;
+        font-size: 13px;
+        border: 1px solid black;
+        z-index: 1000;
     }
 
     .client-details .details {
@@ -476,17 +593,114 @@ header .headName:nth-of-type(2) {
       align-items: flex-start;
     }
 
-    .date-applied {
-      width: 500px;
-      justify-content: space-between;
+    .date-applied input {
+      width: 97px;
     }
 
     .container1 {
-      padding: 0;
     }
 
     .container2 {
+      height: 500px;
+    }
+
+    textarea {
+      border-radius: 5px;
+      font-weight: 500;
+    }
+
+    #payment {
+      color: black;
+      position: relative;
+      left: 500px;
+      top: -800px;
+      z-index: 3000;
+    }
+
+  .sidebar{
+    display: none;
+   }
+
+   .drawer-icon{
+    display: none;
+   }
+
+   header {
+    margin-top: 25px;
+    border: 1px solid black;
+   }
+
+   .computation {
+    border-bottom: 2px solid black;
+   }
+
+   .taxes .yeah {
+    position: relative;
+    right: 20px;
+   }
+
+    .waragud {
+      z-index: 0;
+      height: 470px;
+    }
+
+    .contract-amount {
+      display: inline-block;
+      z-index: 0;
+    }
+    .calculation {
+      margin-bottom: 60px;
+    }
+    .applied {
+      line-height: 8px;
+    }
+
+    .amnt {
+      border-top: 2px solid black;
+    }
+
+    #payment {
       padding: 0;
-      margin: 0;
+    }
+
+    #saveButton {
+      display: none;
+    }
+    .printedName {
+      display: block;
+      display: flex;
+      flex-direction: column;
+      padding-top: 5px;
+      gap: 10px;
+      width: 650px;
+      margin-top: 25px;
+      z-index: 3000;
+    }
+
+    .correctedBy {
+      display: grid;
+      place-items: center;
+    }
+
+    .overPrintedName {
+      display: grid;
+      place-items: end;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .overPrintedName h4:nth-of-type(2) {
+      text-transform: capitalize;
+    }
+
+    .overPrintedName h3 {
+      border-bottom: 1px solid black;
+    }
+
+    .alignment {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 }
