@@ -17,10 +17,36 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 // Allowed admin emails (only these users can log in)
-const allowedAdmins = ["citytreasurer2025@gmail.com"];// Use full email addresses
+const allowedAdmins = ["citytreasurer2025@gmail.com"]; // Use full email addresses
 
+// Function to check internet connectivity
+function isOnline() {
+    return navigator.onLine;
+}
+
+// Function to show a dialog/modal
+function showDialog(message) {
+    alert(message); // Replace with a custom modal/dialog if needed
+}
+
+// Listen for online/offline events
+window.addEventListener("online", () => {
+    showDialog("You are back online. You can now log in.");
+});
+
+window.addEventListener("offline", () => {
+    showDialog("You are not connected to the internet. Please make sure you are connected.");
+});
+
+// Handle login button click
 document.getElementById("submit").addEventListener("click", (event) => {
     event.preventDefault();
+
+    // Check if the user is online
+    if (!isOnline()) {
+        showDialog("You are not connected to the internet. Please make sure you are connected.");
+        return; // Stop further execution
+    }
 
     const email = document.getElementById("username").value;
     const password = document.getElementById("password").value;
@@ -34,8 +60,11 @@ document.getElementById("submit").addEventListener("click", (event) => {
 
             if (allowedAdmins.includes(user.email)) {
                 alert("Login successful! Welcome Admin.");
-                window.location.href =
-                    "/option/option.html"; // Redirect to admin panel
+
+                // Add a 5-second delay before redirecting
+                setTimeout(() => {
+                    window.location.href = "/option/option.html"; // Redirect to admin panel
+                }, 2000); // 5000 milliseconds = 5 seconds
             } else {
                 alert("Access Denied: You are not an admin.");
                 auth.signOut(); // Sign out the user if they are not an admin
