@@ -1,129 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const inputField = document.getElementById('payment');
-    inputField.addEventListener('input', calculateTax); 
-
-    const saveButton = document.getElementById('saveButton');
-    const viewDataButton = document.getElementById('viewDataButton');
-    const modal = document.getElementById('myModal');
-    const closeModal = document.getElementsByClassName('close')[0];
-    const savedDataDiv = document.getElementById('savedData');
-
-    saveButton.addEventListener('click', function () {
-        // Capture the values from the h4 elements
-        const taxCom1 = document.getElementById('tax-com1').textContent;
-        const taxCom2 = document.getElementById('tax-com2').textContent;
-        const taxCom3 = document.getElementById('tax-com3').textContent;
-
-        const taxFor1 = document.getElementById('tax-for1').textContent;
-        const taxFor2 = document.getElementById('tax-for2').textContent;
-        const taxFor3 = document.getElementById('tax-for3').textContent;
-        const taxFor4 = document.getElementById('tax-for4').textContent;
-        const taxFor5 = document.getElementById('tax-for5').textContent;
-        const taxFor6 = document.getElementById('tax-for6').textContent;
-        const equals = document.getElementById('equals').textContent;
-        const amnt = document.getElementById('amnt').textContent;
-        const businessTax = document.getElementById('businessTax').textContent;
-        const regulatoryFees = document.getElementById('regulatoryFees').textContent;
-        const assessment = document.getElementById('assessment').textContent;
-        const uwu = document.getElementById('uwu').textContent;
-
-        // Capture the values from the input fields
-        const input1Values = document.querySelectorAll('.input1');
-        const dateValue = document.querySelector('.input[type="date"]').value;
-
-        // Check if required fields are filled
-        const areInputsFilled = Array.from(input1Values).every(input => input.value.trim() !== '');
-        const isDateFilled = dateValue.trim() !== '';
-
-        if (!areInputsFilled || !isDateFilled) {
-            alert("Please fill in all the required fields.");
-            return;
-        }
-
-        // Prepare the input values to be displayed
-        let input1Text = '';
-        input1Values.forEach((input, index) => {
-            input1Text += `<p>Input ${index + 1}: ${input.value}</p>`;
-        });
-
-        // Create an object to store the data
-        const data = {
-            taxCom1,
-            taxCom2,
-            taxCom3,
-            taxFor1,
-            taxFor2,
-            taxFor3,
-            taxFor4,
-            taxFor5,
-            taxFor6,
-            equals,
-            amnt,
-            businessTax,
-            regulatoryFees,
-            assessment,
-            uwu,
-            inputs: Array.from(input1Values).map(input => input.value),
-            dateValue
-        };
-
-        // Retrieve the existing data from localStorage
-        let savedData = JSON.parse(localStorage.getItem('savedData')) || [];
-
-        // Add the new data to the array
-        savedData.push(data);
-
-        // Save the updated data array back to localStorage
-        localStorage.setItem('savedData', JSON.stringify(savedData));
-
-        // Show a confirmation message
-        alert("Data saved successfully!");
-    });
-
-    viewDataButton.addEventListener('click', function () {
-        // Retrieve the existing data from localStorage
-        let savedData = JSON.parse(localStorage.getItem('savedData')) || [];
-
-        // Display the values inside the modal as separate divs
-        savedDataDiv.innerHTML = savedData.map((entry, index) => `
-            <div class="entry shadow">
-                <h4>${entry.inputs[0]}</h4>
-                <p>Tax Com1: ${entry.taxCom1}</p>
-                <p>Tax Com2: ${entry.taxCom2}</p>
-                <p>Tax Com3: ${entry.taxCom3}</p>
-                <p>Tax For1: ${entry.taxFor1}</p>
-                <p>Tax For2: ${entry.taxFor2}</p>
-                <p>Tax For3: ${entry.taxFor3}</p>
-                <p>Tax For4: ${entry.taxFor4}</p>
-                <p>Tax For5: ${entry.taxFor5}</p>
-                <p>Tax For6: ${entry.taxFor6}</p>
-                <p>Equals: ${entry.equals}</p>
-                <p>Amount: ${entry.amnt}</p>
-                <p>Business Tax: ${entry.businessTax}</p>
-                <p>Regulatory Fees: ${entry.regulatoryFees}</p>
-                <p>Assessment: ${entry.assessment}</p>
-                <p>Uwu: ${entry.uwu}</p>
-                ${entry.inputs.map((input, i) => `<p>Input ${i + 1}: ${input}</p>`).join('')}
-                <p>Date Applied: ${entry.dateValue}</p>
-            </div>
-        `).join('');
-
-        // Show the modal
-        modal.style.display = "block";
-    });
-
-    // Close the modal when the close button is clicked
-    closeModal.addEventListener('click', function () {
-        modal.style.display = "none";
-    });
-
-    // Close the modal when clicking outside of it
-    window.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-});
+    inputField.addEventListener('input', calculateTax);
 
 function calculateTax() {
     const inputValue = Number(document.getElementById('payment').value.trim()); 
@@ -415,7 +292,8 @@ function calculateTax() {
         taxFor5.textContent = "₱ 0.00";
         taxFor6.textContent = "0.00";
         equals.textContent = "0.00";
-    } 
+    };
     
-}
+};
 
+});
