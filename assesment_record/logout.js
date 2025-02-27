@@ -24,25 +24,36 @@ document.querySelectorAll("#drawer .items").forEach(function (item) {
     });
 });
 
-// logout section
-
-// Show the logout modal
+// Logout section
 function showCustomLogoutModal() {
-    document.getElementById("customLogoutModal").style.display = "flex";
+    let modal = document.getElementById("customLogoutModal");
+    modal.style.display = "flex"; // Show modal when clicking Logout
 }
 
 // Handle logout confirmation
 function confirmCustomLogout(isConfirmed) {
     let modal = document.getElementById("customLogoutModal");
     let drawer = document.getElementById("drawer");
+    let drawerIcon = document.querySelector(".drawer-icon");
 
     if (isConfirmed) {
-        // User clicked "Yes" - Logout and redirect
-        window.location.href = "/index.html"; // Change this to your actual logout page
+        // Show loading screen
+        let loadingScreen = document.getElementById("loadingScreen");
+        loadingScreen.style.display = "block";
+
+        // Hide the drawer icon
+        if (drawerIcon) {
+            drawerIcon.style.display = "none";
+        }
+
+        // Wait for 3 seconds before redirecting
+        setTimeout(function () {
+            // Redirect to login page
+            window.location.href = "/index.html";
+        }, 3000);
     } else {
-        // User clicked "No" - Close modal and close drawer
-        modal.style.display = "none";
-        if (drawer.classList.contains("open")) {
+        modal.style.display = "none"; // Close modal when clicking "No"
+        if (drawer && drawer.classList.contains("open")) {
             drawer.classList.remove("open");
         }
     }
@@ -56,4 +67,14 @@ window.onclick = function(event) {
     }
 };
 
+// Ensure modal is hidden on page load
+window.onload = function () {
+    document.getElementById("customLogoutModal").style.display = "none";
+};
 
+// Prevent back navigation after logout
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        window.location.href = "/index.html";
+    }
+};
