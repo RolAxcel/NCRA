@@ -473,6 +473,20 @@ button {
   border-radius: 5px;
 }
 
+#loadingScreen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  z-index: 1000;
+  display: none; /* Initially hidden */
+}
+
 /* Drawer Icon (Button) */
 .drawer-icon {
   top: 15px;
@@ -598,19 +612,7 @@ textarea {
   color: #ccc;
 }
 
-#loadingScreen {
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background: rgba(0, 0, 0, 0.8);
-color: white;
-padding: 20px;
-border-radius: 10px;
-font-size: 18px;
-z-index: 1000;
-display: none; /* Initially hidden */
-}
+
 
 
    @media print {
