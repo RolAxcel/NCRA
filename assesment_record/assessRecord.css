@@ -498,7 +498,7 @@ button {
 }
 
 /* Modal styles */
-.modal {
+.modal, .retrieve {
   display: none; /* Hidden by default */
   position: fixed;
   z-index: 1;
@@ -514,14 +514,16 @@ button {
   background-color: #fefefe;
   margin: 2% auto;
   padding: 20px;
+  padding-top: 40px;
   border: 1px solid #888;
   width: 80%;
   overflow: auto;
   height: 530px;
-  border-radius: 10px;
+  border-radius: 15px;
+  position: relative;
 }
 
-#savedData {
+#savedData, #deletedData {
   max-height: 450px; /* Limit the height if you have a lot of entries */
   overflow-y: auto; /* Enable vertical scrolling */
   padding: 20px 15px;
@@ -555,101 +557,45 @@ textarea {
 }
 
 .close {
+  position: absolute;
+  top: 0;
+  right: 0;
   color: black;
-  float: right;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: normal;
   margin-top: -10px;
+  padding: 2px 11px;
+  border-radius: 3px;
+  border-top-right-radius: 10px;
+  margin-top: 0.5px;
 }
 
 .close:hover {
-  font-size: 33px;
-  transition: all 0.15s;
+  background-color: rgb(194, 0, 0);
+  color: white;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
   text-decoration: none;
   cursor: pointer;
 }
 
-/* Modal Overlay */
-.custom-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Modal Box */
-.custom-modal-content {
-  background: snow;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  color: black;
-  font-size: 15px;
-}
-
-/* Modal Buttons */
-.custom-modal-actions {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.btn-confirm {
-  background: red;
-  color: white;
-  padding: 8px 15px;
+.search {
+  position: absolute;
   border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
+  outline: none;
+  background-color: #3D3D3D;
+  top: 10px;
+  left: 30px;
+  border-radius: 4px;
+  height: 25px;
+  padding-left: 10px;
+  color: #ccc;
 }
 
-.btn-cancel {
-  background: rgb(53, 50, 50);
-  color: white;
-  padding: 8px 15px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
- text-align: center;
-}
-
-/* Button Hover Effects */
-.btn-confirm:hover {
-  background: darkred;
-}
-
-.btn-cancel:hover {
-  background: darkgray;
-}
-
-#loadingScreen {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 18px;
-  z-index: 1000;
-  display: none; /* Initially hidden */
+.search::placeholder {
+  color: #ccc;
 }
 
 
