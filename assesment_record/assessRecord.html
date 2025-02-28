@@ -26,26 +26,14 @@
     <div id="drawer" class="sidebar">
         <ul>
             <li><a href="#" onclick="window.print()">Print</a></li>
-            <li><button class="items" id="saveButton">Save</button></li>
+            <li><button class="" id="saveButton">Save</button></li>
             <li><button class="items" id="viewDataButton">View Data</button></li>
+            <li><button class="items" id="retrieveDeletedButton">Retrieve Deleted Data</button></li>
             <li class="items"><a href="#">2 MILLION BELOW</a></li>
         </ul>
-       <!-- Logout Button Positioned to the Right -->
-         <div class="logout-btn">
-            <button onclick="showCustomLogoutModal()" class="btn-logout">Logout</button>
-            <!-- Custom Logout Modal -->
-            <div id="customLogoutModal" class="custom-modal">
-                <div class="custom-modal-content">
-                    <h2>Do you really want to logout?</h2>
-                    <div class="custom-modal-actions">
-                        <button onclick="confirmCustomLogout(true)" class="btn-confirm">Yes</button>
-                        <button onclick="confirmCustomLogout(false)" class="btn-cancel">No</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="loadingScreen" style="display: none;">
-            <p>Logging out...</p>
+        <!-- Logout Button Positioned to the Right -->
+        <div class="logout-btn">
+            <button onclick="logout()" class="btn-logout">Logout</button>
         </div>
     </div>
         <header>
@@ -58,7 +46,7 @@
             <div class="headName">
                 <h4> Republic of the Philipines</h4>
                 <h4>CITY OF OROQUIETA</h4>
-                <h2>ASSESSMENT 0RECORD</h2>
+                <h2>ASSESSMENT RECORD</h2>
             </div>
             <div class="logo"><img src="/images/logo4.png" alt></div>
             <div class="logo"><img src="/images/logo2.png" alt></div>
@@ -72,10 +60,10 @@
                 <h5>Address:</h5>
             </div>
             <div class="textBoxes">
-                <input class="input1" type="text">
-                <input class="input1" type="text">
-                <input class="input1" type="text">
-                <input class="input1" type="text">
+                <input id="tradeNameInput" class="input1" type="text">
+                <input id="addressInpit" class="input1" type="text">
+                <input id="genManagerInput" class="input1" type="text">
+                <input id="address2Input" class="input1" type="text">
             </div>
             <div class="date-applied">
                 <div class="date">
@@ -153,8 +141,16 @@
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h3>Saved Data</h3>
+                <input type="text" class="search" id="searchSavedData" placeholder="Search saved data">
                 <div id="savedData"></div> <!-- This div will hold the saved data -->
+            </div>
+        </div>
+
+        <div id="retrieveModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <input type="text" class="search" id="searchDeletedData" placeholder="Search Deleted Data...">
+                <div id="deletedData"></div>
             </div>
         </div>
 
@@ -168,7 +164,7 @@
                     <div class="contract-amount">
                         <div class="cadc">
                             <h4>Contract Amount Due to Contractor</h4>
-                            <textarea required="" cols="45" rows="3" id="textarea" class="pay" name="textarea"></textarea>
+                            <textarea required="" cols="60" rows="3" id="textarea" class="pay" name="textarea"></textarea>
                             <div class="txable">
                                 <h4>Total Taxable Gross Receipt</h4>
                             </div>
@@ -225,8 +221,11 @@
         </section>
         <script src="../assesment_record/assessRecord.js"></script>
         <script src="logout.js"></script>
-        <script>
-
-        </script>
+        <script src="resize.js"></script>
+        <script src="/database/search.js"></script>
+        <script src="/database/database.js"></script>
+        <script src="data.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
     </body>
 </html>
